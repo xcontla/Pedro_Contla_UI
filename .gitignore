@@ -1,0 +1,4 @@
+*.meta
+*.exr
+/Library/Artifacts/
+Assets/Images/Skyboxes/
