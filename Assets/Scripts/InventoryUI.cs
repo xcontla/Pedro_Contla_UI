@@ -15,7 +15,7 @@ public class InventoryUI : MonoBehaviour
     public GameObject itemSlotPrefab;
     public bool isInventoryAptitudes;
     
-    private void Start()
+    private void Awake()
     {
         startPostion = new Vector2(0, 0);
         InventorySystem.Instance.onInventoryChangedEventCallback += OnUpdateInventory;
@@ -23,19 +23,20 @@ public class InventoryUI : MonoBehaviour
 
     public void OnUpdateInventory()
     {
+
+        Debug.Log("Update inventory");
         foreach (Transform t in transform)
         {
             Destroy(t.transform.gameObject);
         }
-
         DrawInventory();
     }
     public void DrawInventory()
     {
-       
-       
 
-        Vector3 offset = new Vector3(0, 0, 0);
+        Debug.Log("draw inventory");
+
+        //Vector3 offset = new Vector3(0, 0, 0);
         if (isInventoryAptitudes)
         {
             titulo.text = "Aptitudes : " + InventorySystem.Instance.inventoryAptitudes.Count.ToString();
@@ -68,6 +69,7 @@ public class InventoryUI : MonoBehaviour
         obj.GetComponent<RectTransform>().localPosition += GetPosition(index);
         ItemSlot slot = obj.GetComponent<ItemSlot>();
         slot.Set(item);
+        
     }
 
     public Vector3 GetPosition(int i)

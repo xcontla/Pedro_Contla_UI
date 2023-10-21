@@ -1,4 +1,8 @@
 *.meta
 *.exr
-/Library/Artifacts/
+Library/Artifacts/
 Assets/Images/Skyboxes/
+PedroContlaPrototipo/
+PedroContlaRelease.zip
+Release/
+Library/PlayerDataCache/

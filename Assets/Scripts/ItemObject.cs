@@ -9,7 +9,7 @@ public class ItemObject : MonoBehaviour
     public void onHandlePickUp()
     {
         InventorySystem.Instance.Add(itemData);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
 
     }
 

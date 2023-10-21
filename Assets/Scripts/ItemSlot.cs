@@ -17,6 +17,9 @@ public class ItemSlot : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _stackNumber;
+    
+   // [SerializeField]
+   // private GameObject hud;
 
     public void Set(InventoryItem item)
     {
@@ -29,5 +32,19 @@ public class ItemSlot : MonoBehaviour
             return;
         }
         _stackNumber.text = item.stackSize.ToString();
+    }
+
+
+    public void ShowDetails()
+    {
+      //  hud.transform.SetParent(this.transform);
+        Debug.Log("Abriendo hudDetails");
+       // hud.SetActive(true);
+    }
+
+    public void UnShowDetails()
+    {
+        Debug.Log("Cerrand hudNoDetails");
+       // hud.SetActive(false);
     }
 }

@@ -60,7 +60,7 @@ public class DialogoInformacion : MonoBehaviour
         didDialogueStart = true;
         dialogoPanel.SetActive(true);
         lineIndex = 0;
-        StartCoroutine(ShowLine());
+        StartCoroutine(ShowLine0());
     }
 
     private void NextDialogueLine()
@@ -68,7 +68,7 @@ public class DialogoInformacion : MonoBehaviour
         lineIndex++;
         if (lineIndex < lineasDialogo.Length)
         {
-            StartCoroutine(ShowLine());
+            StartCoroutine(ShowLine0());
         }
         else
         {
@@ -80,10 +80,10 @@ public class DialogoInformacion : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowLine()
+    private IEnumerator ShowLine0()
     {
         dialogoText.text = string.Empty;
-        foreach(char ch in lineasDialogo[lineIndex])
+        foreach(char ch in lineasDialogo[0])
         {
             dialogoText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
@@ -111,4 +111,5 @@ public class DialogoInformacion : MonoBehaviour
             rotationAngle = 0;
         }
     }
+
 }

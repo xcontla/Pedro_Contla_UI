@@ -8,11 +8,10 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance;
 
     public delegate void onInventoryChangedEvent();
-
     public event onInventoryChangedEvent onInventoryChangedEventCallback;
 
-    private Dictionary<InventoryItemData, InventoryItem> _itemDictionaryAptitudes;
-    private Dictionary<InventoryItemData, InventoryItem> _itemDictionaryIntereses;
+    public Dictionary<InventoryItemData, InventoryItem> _itemDictionaryAptitudes;
+    public Dictionary<InventoryItemData, InventoryItem> _itemDictionaryIntereses;
     public List<InventoryItem> inventoryAptitudes;
     public List<InventoryItem> inventoryIntereses;
     private void Awake()
@@ -44,6 +43,8 @@ public class InventorySystem : MonoBehaviour
             InventoryItem newItem = new InventoryItem(itemData);
             inventoryAptitudes.Add(newItem);
             _itemDictionaryAptitudes.Add(itemData,newItem);
+
+
             onInventoryChangedEventCallback.Invoke();
         }
         }

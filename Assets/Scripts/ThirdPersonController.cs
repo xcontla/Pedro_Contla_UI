@@ -7,13 +7,15 @@ public class ThirdPersonController : MonoBehaviour
     private Animator playerAnimator;
 
     private CapsuleCollider capsuleCollider;
+    public GameObject gameHud;
 
     void Start()
     {
+        gameHud.SetActive(true);
         playerAnimator = GetComponent<Animator>();
-
         capsuleCollider = GetComponent<CapsuleCollider>();
 
+        gameHud.SetActive(false);
     }
 
     // Update is called once per frame
